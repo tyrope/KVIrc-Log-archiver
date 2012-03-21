@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+
 namespace Archiver
 {
     class Program
@@ -26,10 +27,16 @@ namespace Archiver
                 verbose = (args[0] == "-v" || args[0] == "-verbose");
                 quiet = (args[0] == "-q" || args[0] == "-quiet");
             }
+            if (verbose && quiet)
+            {
+                Console.WriteLine("Should I speak or shut up? Make up your mind!");
+                Console.ReadLine();
+                return;
+            }
             string logFolder = @"D:\IRC_Logs";
             string archiveFolder = @"D:\IRC_Logs\Archive";
-            string[] logs_ori = Directory.GetFiles(logFolder);
-            foreach(string file in logs_ori){
+            foreach (string file in Directory.GetFiles(logFolder))
+            {
                 if (verbose){ Console.WriteLine(file); }
                 string[] filePath = file.Split('\\');
                 string fileName = filePath[filePath.Length - 1];
@@ -78,6 +85,8 @@ namespace Archiver
                     {
                         if (!quiet) { Console.WriteLine("File already exists: " + archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".txt!"); }
                     }else{
+                        if (verbose) { Console.WriteLine("Moving file: " + file + "to: " + archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".log"); }
+                        //todo: see if year/month/day != today, if it does, ignore. if not, move.
                         File.Copy(file,archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".log");
                     }
                 }
