@@ -46,10 +46,6 @@ Q: Help! My logs disappeared!
 A: First, that's not a question. Now, logs are disabled by default. They probably
 never been there.
 
-Q: Why is the support channel called #YourPants?
-A: Because i'm in your pants. Plus, #Support is already used for official network
-issues/questions.
-
 Q: I'm offended by your FAQ, where can I voice my complaints?
 A: Find the nearest high point and yell REALLY loudly. If you don't get a response
 within a reasonable time period, please try again.
@@ -59,8 +55,8 @@ within a reasonable time period, please try again.
 
 Note: KVIrc Log archiver comes WITHOUT ANY WARRANTY.
 
-Feel free to ask questions by joining the IRC Channel I frequent:
-#YourPants on irc.nerdfighteria.net
+Feel free to ask questions by joining the IRC Channel #KVIrc on irc.nerdfighteria.net
+If I don't respond, send me a private message
 -------------------------------------------------------------------------------------
 # Credits
 
@@ -71,8 +67,9 @@ Dimitri Molenaars   Tyrope	tyrope	    Developer/Designer
 
 KVIrc Log archiver comes WITHOUT ANY WARRANTY.
 
-KVIrc Log archiver is free software: you may redistribute it and/or modify it freely,
-no official license has been attached to the software, but official support will
-only be given by releases downloaded from the the official git, either pre-compiled
-or self-compiled.
+KVIrc Log archiver is free software and distributed under the WTFPL. However,
+official support will only be provided to unmodified versions downloaded from:
+https://github.com/tyrope/KVIrc-Log-archiver
+
+More information: http://en.wikipedia.org/wiki/WTFPL
 
