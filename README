@@ -1,11 +1,11 @@
-# Introduction
+Introduction
 
 KVIrc Log Archiver is Software developed originally for personal use, I decided to
 upload it to github to allow other KVIrc users to sort their logging files more
 logically as well.
 
 -------------------------------------------------------------------------------------
-# Installation
+Installation
 
 Method 1 - Pre-compiled
 a. Click downloads at the top-left
@@ -17,7 +17,7 @@ a. pull from the git: git://github.com/tyrope/KVIrc-Log-archiver.git
 b. Compile using your favourite IDE (I recommend Microsoft Visual C# 2010 Express)
 
 -------------------------------------------------------------------------------------
-# Arguments
+Arguments
 
 You can run this program with the following parameters:
 [-a] [-l] [-q(uiet)|-v(erbose)] 
@@ -28,7 +28,7 @@ You can run this program with the following parameters:
 -v or -verbose = Run program with extra output
 
 -------------------------------------------------------------------------------------
-# NSFAQ (Not so frequently asked questions)
+NSFAQ (Not so frequently asked questions)
 
 Q: How are you?
 A: Pretty good, nobody's been asking me pesky questions about my software, yet.
@@ -51,19 +51,19 @@ A: Find the nearest high point and yell REALLY loudly. If you don't get a respon
 within a reasonable time period, please try again.
 
 -------------------------------------------------------------------------------------
-# Support
+Support
 
 Note: KVIrc Log archiver comes WITHOUT ANY WARRANTY.
 
 Feel free to ask questions by joining the IRC Channel #KVIrc on irc.nerdfighteria.net
 If I don't respond, send me a private message
 -------------------------------------------------------------------------------------
-# Credits
+Credits
 
 Name		    IRC Name	github User Position
 Dimitri Molenaars   Tyrope	tyrope	    Developer/Designer
 -------------------------------------------------------------------------------------
-# Licensing
+Licensing
 
 KVIrc Log archiver comes WITHOUT ANY WARRANTY.
 
