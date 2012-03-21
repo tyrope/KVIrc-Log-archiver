@@ -1,1 +1,44 @@
-Readme will be placed here when I feel like writing documentation.
+# Introduction
+
+KVIrc Log Archiver is Software developed originally for personal use, I decided to
+upload it to github to allow other KVIrc users to sort their logging files more
+logically as well.
+-------------------------------------------------------------------------------------
+# Installation
+
+Method 1 - Pre-compiled
+a. Click downloads at the top-left
+b. Download the latest version
+
+Method 2 - Self-compiled: (Advanced users only, You have been warned.)
+a. pull from the git: git://github.com/tyrope/KVIrc-Log-archiver.git
+    or the https: https://tyrope@github.com/tyrope/KVIrc-Log-archiver.git
+b. Compile using your favourite IDE (I recommend Microsoft Visual C# 2010 Express)
+
+-------------------------------------------------------------------------------------
+# FAQ
+
+Q: How are you?
+A: Pretty good, nobody's been asking me pesky questions about my software, yet.
+-------------------------------------------------------------------------------------
+# Support
+
+Note: KVIrc Log archiver comes WITHOUT ANY WARRANTY.
+
+Feel free to ask questions by joining the IRC Channel I frequent:
+**#YourPants** on *irc.nerdfighteria.net*
+-------------------------------------------------------------------------------------
+# Credits
+
+Name		    IRC Name	github User Position
+Dimitri Molenaars   Tyrope	tyrope	    Developer/Designer
+-------------------------------------------------------------------------------------
+# Licensing
+
+KVIrc Log archiver comes WITHOUT ANY WARRANTY.
+
+KVIrc Log archiver is free software: you may redistribute it and/or modify it freely,
+no official license has been attached to the software, but official support will
+only be given by releases downloaded from the the official git, either pre-compiled
+or self-compiled.
+
