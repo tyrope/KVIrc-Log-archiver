@@ -3,6 +3,7 @@
 KVIrc Log Archiver is Software developed originally for personal use, I decided to
 upload it to github to allow other KVIrc users to sort their logging files more
 logically as well.
+
 -------------------------------------------------------------------------------------
 # Installation
 
@@ -16,17 +17,50 @@ a. pull from the git: git://github.com/tyrope/KVIrc-Log-archiver.git
 b. Compile using your favourite IDE (I recommend Microsoft Visual C# 2010 Express)
 
 -------------------------------------------------------------------------------------
-# FAQ
+# Arguments
+
+You can run this program with the following parameters:
+[-a] [-l] [-q(uiet)|-v(erbose)] 
+
+-a [directory] = Specify location of the archives
+-l [directory] = Specify location of the log files
+-q or -quiet = Run program without saying anything (closes automatically when done!)
+-v or -verbose = Run program with extra output
+
+-------------------------------------------------------------------------------------
+# NSFAQ (Not so frequently asked questions)
 
 Q: How are you?
 A: Pretty good, nobody's been asking me pesky questions about my software, yet.
+
+Q: Are you officially afflicated with http://kvirc.net/ ?
+A: No.
+
+Q: Will you help me install KVIrc?
+A: No.
+
+Q: Banana?
+A: Fish.
+
+Q: Help! My logs disappeared!
+A: First, that's not a question. Now, logs are disabled by default. They probably
+never been there.
+
+Q: Why is the support channel called #YourPants?
+A: Because i'm in your pants. Plus, #Support is already used for official network
+issues/questions.
+
+Q: I'm offended by your FAQ, where can I voice my complaints?
+A: Find the nearest high point and yell REALLY loudly. If you don't get a response
+within a reasonable time period, please try again.
+
 -------------------------------------------------------------------------------------
 # Support
 
 Note: KVIrc Log archiver comes WITHOUT ANY WARRANTY.
 
 Feel free to ask questions by joining the IRC Channel I frequent:
-**#YourPants** on *irc.nerdfighteria.net*
+#YourPants on irc.nerdfighteria.net
 -------------------------------------------------------------------------------------
 # Credits
 
