@@ -13,7 +13,7 @@ b. Download the latest version
 
 Method 2 - Self-compiled: (Advanced users only, You have been warned.)
 a. pull from the git: git://github.com/tyrope/KVIrc-Log-archiver.git
-    or the https: https://tyrope@github.com/tyrope/KVIrc-Log-archiver.git
+    or the https: https://github.com/tyrope/KVIrc-Log-archiver.git
 b. Compile using your favourite IDE (I recommend Microsoft Visual C# 2010 Express)
 
 -------------------------------------------------------------------------------------
