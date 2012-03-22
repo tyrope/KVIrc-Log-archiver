@@ -22,17 +22,23 @@ namespace Archiver
             string archiveFolder = "";
             for (int i = 0; i < args.Length; i++)
             {
-                if (verbose) { Console.WriteLine("checking argument " + i + " = " + args[i]); }
-                int j = i+1;
-                if (args[i] == "-a") {
+                int j = i + 1;
+                if (args[i] == "-a")
+                {
                     archiveFolder = args[j];
                     i++;
-                }else if (args[i] == "-l") {
+                }
+                else if (args[i] == "-l")
+                {
                     logFolder = args[j];
                     i++;
-                }else if (args[i] == "-v" || args[i] == "-verbose"){
+                }
+                else if (args[i] == "-v" || args[i] == "-verbose")
+                {
                     verbose = true;
-                }else if (args[i] == "-q" || args[i] == "-quiet"){
+                }
+                else if (args[i] == "-q" || args[i] == "-quiet")
+                {
                     quiet = true;
                 }
             }
@@ -41,20 +47,22 @@ namespace Archiver
                 Console.WriteLine("Archive folder parameter not given.");
                 Console.ReadLine();
                 return;
-            }else if (!Directory.Exists(archiveFolder))
+            }
+            else if (!Directory.Exists(archiveFolder))
             {
                 Console.WriteLine("Archive folder doesn't exists, check the -a parameter.");
-                if (verbose) { Console.WriteLine("archiveFolder = "+archiveFolder); }
+                if (verbose) { Console.WriteLine("archiveFolder = " + archiveFolder); }
                 Console.ReadLine();
                 return;
             }
-            
+
             if (logFolder.Length == 0)
             {
                 Console.WriteLine("Logging folder parameter not given.");
                 Console.ReadLine();
                 return;
-            }else if (!Directory.Exists(logFolder))
+            }
+            else if (!Directory.Exists(logFolder))
             {
                 Console.WriteLine("Logging folder doesn't exists, check the -l parameter");
                 if (verbose) { Console.WriteLine("logFolder = " + logFolder); }
@@ -70,19 +78,18 @@ namespace Archiver
             int del = 0, move = 0, fail = 0;
             foreach (string file in Directory.GetFiles(logFolder))
             {
-                if (verbose){ Console.WriteLine("Parsing: "+file); }
                 string[] filePath = file.Split('\\');
                 string fileName = filePath[filePath.Length - 1];
                 //channel_irma_weldon.freenode_2012.03.20.log
-                if (verbose) { Console.WriteLine(fileName); }
+                if (verbose) { Console.WriteLine("Parsing: " + fileName); }
                 if (fileName.StartsWith("deadchannel_"))
                 {
                     File.Delete(file);
-                    if (verbose) { Console.WriteLine("DEL: "+file); }
+                    if (verbose) { Console.WriteLine("DEL: " + file); }
                     del++;
                     continue;
                 }
-                else if(fileName.StartsWith("query_") || fileName.StartsWith("channel_"))
+                else if (fileName.StartsWith("query_") || fileName.StartsWith("channel_"))
                 {
                     /*
                      * channel_irma_weldon.freenode 2012.03.20.log
@@ -120,16 +127,17 @@ namespace Archiver
                         Directory.CreateDirectory(archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day);
                     }
                     //at this point the folder exists.
-                    if (verbose) { Console.WriteLine(archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".txt"); }
                     if (File.Exists(archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".txt"))
                     {
                         if (!quiet) { Console.WriteLine("File already exists: " + archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".txt!"); }
                         fail++;
-                    }else{
-                        if (verbose) { Console.WriteLine("Moving file: " + file + "to: " + archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".log"); }
+                    }
+                    else
+                    {
                         //todo: see if year/month/day != today, if it does, ignore. if not, move.
+                        if (verbose) { Console.WriteLine("Copying file: " + file + "to: " + archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".txt"); }
                         move++;
-                        File.Copy(file,archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".log");
+                        File.Copy(file, archiveFolder + '\\' + network + '\\' + year + '\\' + month + '\\' + day + '\\' + channel + ".txt");
                     }
                 }
             }
