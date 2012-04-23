@@ -20,12 +20,13 @@ b. Compile using your favourite IDE (I recommend Microsoft Visual C# 2010 Expres
 Arguments
 
 You can run this program with the following parameters, in any order:
--a <archiveFolder> -l <logFolder> [-q(uiet)|-v(erbose)] 
+-a <archiveFolder> -l <logFolder> [-q(uiet)|-v(erbose)|-r(eplace)] 
 
 -a <directory> = Specify location of the archives, if the folder has spaces in the name DOUBLE quotes are required.
 -l <directory> = Specify location of the log files, if the folder has spaces in the name DOUBLE quotes are required.
 -q or -quiet = Run program without saying anything (closes automatically when done!)
 -v or -verbose = Run program with extra output
+-i or -i = By default, KVIrc Log Archiver replaces logfiles if they already exist. With this parameter it will ignore the files instead.
 
 -------------------------------------------------------------------------------------
 NSFAQ (Not so frequently asked questions)
