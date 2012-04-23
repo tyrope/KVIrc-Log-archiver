@@ -1,4 +1,6 @@
-*.csproj*
-Properties/*
 bin/*
 obj/*
+Properties/*
+*.csproj*
+*.sln
+*.suo
