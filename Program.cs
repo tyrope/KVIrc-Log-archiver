@@ -143,21 +143,31 @@ namespace Archiver {
                             if(verbose) {
                                 Console.WriteLine("Moved file: " + file + "to: " + wd + '\\' + channel + ".txt");
                             }
-                            move++;
-                        } catch {
-                            if(verbose) {
-                                Console.WriteLine("File couldn't be moved: " + file + "to: " + wd + '\\' + channel + ".txt");
+                        } catch (IOException) {
+                            //file already exists, delete then move.
+                            if(ignore) { continue; } //or not.
+                            try {
+                                File.Delete(wd + '\\' + channel + ".txt");
+                                File.Move(file, wd + '\\' + channel + ".txt");
+                                if(verbose) {
+                                    Console.WriteLine("File overwritten: " + wd + '\\' + channel + ".txt");
+                                }
+                                move++;
+                            } catch {
+                                if(verbose) {
+                                    Console.WriteLine("File couldn't be moved: " + file + "to: " + wd + '\\' + channel + ".txt");
+                                }
+                                fail++;
                             }
-                            fail++;
                         }
                     }
                 }
             }
             if(!quiet) {
                 if(verbose) {
-                    Console.WriteLine(del + " files Deleted (dead channel)");
-                    Console.WriteLine(move + " files Archived successfully.");
-                    Console.WriteLine(ignored + " files Archived ignored.");
+                    Console.WriteLine(del + " files deleted (dead channel)");
+                    Console.WriteLine(move + " files archived.");
+                    Console.WriteLine(ignored + " files ignored.");
                     Console.WriteLine(fail + " files failed.");
                 }
                 Console.WriteLine("DONE! (press enter to exit.)");
