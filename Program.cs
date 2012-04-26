@@ -112,7 +112,7 @@ namespace Archiver {
                     if(now == logDate) {
                         ignored++;
                         if(verbose) {
-                            Console.WriteLine("Ignoring file: " + file + "to: " + wd + '\\' + year+ '\\' + month + '\\' + day + '\\' + channel + ".txt");
+                            Console.WriteLine("Ignoring file: " + file + " to: " + wd + '\\' + year+ '\\' + month + '\\' + day + '\\' + channel + ".txt");
                         }
                         continue;
                     }
@@ -141,7 +141,7 @@ namespace Archiver {
                         try {
                             File.Move(file, wd + '\\' + channel + ".txt");
                             if(verbose) {
-                                Console.WriteLine("Moved file: " + file + "to: " + wd + '\\' + channel + ".txt");
+                                Console.WriteLine("Moved file: " + file + " to: " + wd + '\\' + channel + ".txt");
                             }
                         } catch (IOException) {
                             //file already exists, delete then move.
@@ -155,7 +155,7 @@ namespace Archiver {
                                 move++;
                             } catch {
                                 if(verbose) {
-                                    Console.WriteLine("File couldn't be moved: " + file + "to: " + wd + '\\' + channel + ".txt");
+                                    Console.WriteLine("File couldn't be moved: " + file + " to: " + wd + '\\' + channel + ".txt");
                                 }
                                 fail++;
                             }
