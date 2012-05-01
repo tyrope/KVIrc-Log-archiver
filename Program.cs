@@ -142,6 +142,7 @@ namespace Archiver {
                             File.Move(file, wd + '\\' + channel + ".txt");
                             if(verbose) {
                                 Console.WriteLine("Moved file: " + file + " to: " + wd + '\\' + channel + ".txt");
+                                move++;
                             }
                         } catch (IOException) {
                             //file already exists, delete then move.
