@@ -130,36 +130,28 @@ namespace Archiver {
                     wd += '\\' + day;
                     checkWD(wd, verbose);
                     //at this point the folder exists.
-
-                    //does the file exist?
-                    if(File.Exists(wd + '\\' + channel + ".txt")) {
-                        if(!quiet) {
-                            Console.WriteLine("File already exists: " + wd + '\\' + channel + ".txt!");
+                    
+                    try {
+                        File.Move(file, wd + '\\' + channel + ".txt");
+                        if(verbose) {
+                            Console.WriteLine("Moved file: " + file + " to: " + wd + '\\' + channel + ".txt");
+                            move++;
                         }
-                        fail++;
-                    } else {
+                    } catch (IOException) {
+                        //file already exists, delete then move.
+                        if(ignore) { continue; } //or not.
                         try {
+                            File.Delete(wd + '\\' + channel + ".txt");
                             File.Move(file, wd + '\\' + channel + ".txt");
                             if(verbose) {
-                                Console.WriteLine("Moved file: " + file + " to: " + wd + '\\' + channel + ".txt");
-                                move++;
+                                Console.WriteLine("File overwritten: " + wd + '\\' + channel + ".txt");
                             }
-                        } catch (IOException) {
-                            //file already exists, delete then move.
-                            if(ignore) { continue; } //or not.
-                            try {
-                                File.Delete(wd + '\\' + channel + ".txt");
-                                File.Move(file, wd + '\\' + channel + ".txt");
-                                if(verbose) {
-                                    Console.WriteLine("File overwritten: " + wd + '\\' + channel + ".txt");
-                                }
-                                move++;
-                            } catch {
-                                if(verbose) {
-                                    Console.WriteLine("File couldn't be moved: " + file + " to: " + wd + '\\' + channel + ".txt");
-                                }
-                                fail++;
+                            move++;
+                        } catch {
+                            if(verbose) {
+                                Console.WriteLine("File couldn't be moved: " + file + " to: " + wd + '\\' + channel + ".txt");
                             }
+                            fail++;
                         }
                     }
                 }
