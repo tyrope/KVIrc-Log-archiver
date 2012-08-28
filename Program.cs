@@ -98,6 +98,11 @@ namespace Archiver {
                      * split by . -> irma_weldon freenode_2012 03 18 log
                      * split [1] by _ -> irma_weldon freenode 2012 03 18 log
                     */
+
+                    //replace characters to properly display their name
+                    fileName = fileName.Replace("%2d", "-").Replace("%2a", "[BNC]").Replace("%7b", "{").Replace("%7d", "}").Replace("%5b", "[").Replace("%5d", "]").Replace("%26", "&");
+                    
+                    //Cutting it up in pieces
                     string[] nameParts = fileName.Replace("query_", "").Replace("channel_", "").Split('.');
                     string channel = nameParts[0];
                     string network = nameParts[1].Split('_')[0];
@@ -116,9 +121,6 @@ namespace Archiver {
                         }
                         continue;
                     }
-
-                    //replace characters to properly display their name
-                    channel = channel.Replace("%2d", "-").Replace("%2a", "[BNC]").Replace("%7b", "{").Replace("%7d", "}").Replace("%5b", "[").Replace("%5d", "]").Replace("%26", "&");
 
                     //check if the working directory exists.
                     wd += network;
