@@ -100,8 +100,8 @@ namespace Archiver {
                     */
 
                     //replace characters to properly display their name
-                    fileName = fileName.Replace("%2d", "-").Replace("%2a", "[BNC]").Replace("%7b", "{").Replace("%7d", "}").Replace("%5b", "[").Replace("%5d", "]").Replace("%26", "&");
-                    
+                    fileName = fileName.Replace("%2d", "-").Replace("%2a", "[BNC]").Replace("%7b", "{").Replace("%7d", "}").Replace("%5b", "[").Replace("%5d", "]").Replace("%26", "&").Replace("%7c", "|");
+
                     //Cutting it up in pieces
                     string[] nameParts = fileName.Replace("query_", "").Replace("channel_", "").Split('.');
                     string channel = nameParts[0];
