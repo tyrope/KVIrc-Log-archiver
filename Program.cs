@@ -166,8 +166,8 @@ namespace Archiver {
                     Console.WriteLine(ignored + " files ignored.");
                     Console.WriteLine(fail + " files failed.");
                 }
-                Console.WriteLine("DONE! (press enter to exit.)");
-                Console.ReadLine();
+                Console.WriteLine("DONE! (press any key to exit.)");
+                Console.ReadKey();
             }
         }
     }
